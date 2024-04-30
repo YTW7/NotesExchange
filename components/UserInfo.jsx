@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 export default function UserInfo() {
   const { data: session } = useSession();
 
-  if (!session) redirect("/");
+  // if (!session) {redirect("/")};
   
 
   return (

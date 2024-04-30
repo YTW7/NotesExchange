@@ -4,8 +4,10 @@ const topicSchema = new Schema(
   {
     title: String,
     description: String,
+    price: Number,
+    drivelink: String,
     userName: String,
-    userEmail: String
+    userEmail: String,
   },
   {
     timestamps: true,

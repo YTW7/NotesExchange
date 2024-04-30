@@ -7,9 +7,11 @@ import { useSession } from "next-auth/react";
 export default function AddTopic() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const { data: session } = useSession();
+  const [price, setPrice]=useState(0)
   const [userEmail, setUserEmail]=useState()
   const [userName, setUserName]=useState()
+
+  const { data: session } = useSession();
 
   useEffect(() => {
     // Set user state only if session exists
@@ -19,14 +21,14 @@ export default function AddTopic() {
       console.log(userEmail)
       console.log(userName)
     }
-  }, [session]);
+  }, [session, userEmail, userName]);
 
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!title || !description) {
+    if (!title || !description ||!price) {
       alert("Title and description are required.");
       return;
     }
@@ -37,7 +39,7 @@ export default function AddTopic() {
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ title, description, userName, userEmail }),
+        body: JSON.stringify({ title, description, price, userName, userEmail }),
       });
 
       if (res.ok) {
@@ -59,7 +61,7 @@ export default function AddTopic() {
         value={title}
         className="border border-slate-500 px-8 py-2"
         type="text"
-        placeholder="Topic Title"
+        placeholder="Notes Title"
       />
 
       <input
@@ -67,14 +69,22 @@ export default function AddTopic() {
         value={description}
         className="border border-slate-500 px-8 py-2"
         type="text"
-        placeholder="Topic Description"
+        placeholder="Notes Description(Course, Session, Semester )"
+      />
+
+      <input
+        onChange={(e) => setPrice(e.target.value)}
+        value={price}
+        className="border border-slate-500 px-8 py-2"
+        type="text"
+        placeholder="Notes Price"
       />
 
       <button
         type="submit"
         className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
       >
-        Add Topic
+        Post Ad
       </button>
     </form>
     

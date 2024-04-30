@@ -14,6 +14,10 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    purchased:{
+      type: Array,
+      default: [], 
+    }
   },
   { timestamps: true }
 );
