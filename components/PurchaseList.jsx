@@ -48,6 +48,7 @@ export default async function PurchaseList({ userEmail }) {
   const filteredTopics = topics.filter((topic) => purchasedIds.includes(topic._id));
   return (
     <>
+    {(purchasedIds.length === 0) ?"":<h1 className="font-bold text-2xl">Previous Purchases</h1>}
       {filteredTopics.map((t) => (
         <div
           key={t._id}

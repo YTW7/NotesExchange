@@ -17,7 +17,6 @@ export default async function Home() {
     {
       session ? 
       <>
-      <h1 className="font-bold text-2xl">Previous Purchases</h1>
       <PurchaseList userEmail={session?.user?.email}/>
       <h1 className="font-bold text-2xl">Buyables</h1>
       <TopicsList user={session?.user?.name}/>
