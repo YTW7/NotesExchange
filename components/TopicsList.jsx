@@ -6,7 +6,7 @@ import { SiGoogledocs } from "react-icons/si";
 
 const getTopics = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/topics", {
+    const res = await fetch("https://notes-exchange.vercel.app/api/topics", {
       cache: "no-store",
     });
 

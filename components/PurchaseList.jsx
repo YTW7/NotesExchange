@@ -7,7 +7,7 @@ import { SiGoogledocs } from "react-icons/si";
 
 const getPurchasedItems = async (userEmail) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/purchase/${userEmail}`, {
+    const res = await fetch(`https://notes-exchange.vercel.app/api/purchase/${userEmail}`, {
       cache: "no-store",
     });
 
@@ -24,7 +24,7 @@ const getPurchasedItems = async (userEmail) => {
 
 const getTopics = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/topics", {
+    const res = await fetch("https://notes-exchange.vercel.app/api/topics", {
       cache: "no-store",
     });
 

@@ -18,7 +18,7 @@ export default function PurchaseConfirm({ id}) {
         // const updatedPurchasedItem = [...purchasedItem, id]; // Add id to purchased array
         // setPurchasedItem(updatedPurchasedItem);
       
-      const res = await fetch(`http://localhost:3000/api/purchase/${userEmail}`, {
+      const res = await fetch(`https://notes-exchange.vercel.app/api/purchase/${userEmail}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
