@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^2.7.1",
+    "@stripe/stripe-js": "^3.4.0",
+    "axios": "^1.6.8",
     "bcryptjs": "^2.4.3",
     "mongoose": "^8.3.2",
     "next": "14.2.3",

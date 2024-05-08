@@ -31,19 +31,19 @@ export default function PurchaseConfirm({ id}) {
       }
 
     //   router.refresh();
-    //   router.push("/");
+      router.push("/");  
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center gap-3 h-full">
+    <form  className="flex flex-col items-center justify-center gap-3 h-full">
       <br/><br/><br/><br/><br/><br/><br/><br/>
-      <button className="bg-green-600 font-bold text-white py-3 px-6 rounded-lg">
+      <button onClick={handleSubmit} className="bg-green-600 font-bold text-white py-3 px-6 rounded-lg">
         Confirm Purchase
       </button>
-<br/>
+      <br/>
       You will be redirected to our Payment Gateway
     </form>
   );

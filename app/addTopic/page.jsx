@@ -36,23 +36,23 @@ export default function AddTopic() {
 
     let isValid = true;
     if (!title.trim()) {
-      setTitleError("Title is required.");
+      setTitleError("*Title is required.");
       isValid = false;
     }
     if (!description.trim()) {
-      setDescriptionError("Description is required.");
+      setDescriptionError("*Description is required.");
       isValid = false;
     }
     if ( !price) {
-      setPriceError("Price is required.");
+      setPriceError("*Price is required.");
       isValid = false;
     }
     if ( price<=0) {
-      setPriceError("Price can't be negative or zero.");
+      setPriceError("*Price can't be negative or zero.");
       isValid = false;
     }
     if (!drivelink.trim()) {
-      setDriveLinkError("Drive Link is required.");
+      setDriveLinkError("*Drive Link is required.");
       isValid = false;
     }
 
